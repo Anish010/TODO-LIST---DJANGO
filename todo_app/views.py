@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
+from rest_framework.decorators import api_view
 from .forms import ToDoForm
 from .models import ToDo
 # Create your views here.
@@ -14,7 +15,7 @@ def index(request):
     return render(request, 'todo_app/index.html', context)
 
 
-@require_POST
+@api_view(['GET','POST'])
 def addNewToDo(request):
     form = ToDoForm(request.POST)
     if form.is_valid():
