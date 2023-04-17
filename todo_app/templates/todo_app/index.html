@@ -61,9 +61,9 @@
           <ul class="list-group t20">
             {% for t in mytodo %}
               {% if t.complete %}
-                <li class="list-group-item todo-completed">{{ t.todotext }}</li>
+                <li class="list-group-item todo-completed t10">{{ t.todotext }}</li>
               {% else %}
-                <a href="{% url 'complete' t.id %}"><li class="list-group-item">{{ t.todotext }}</li></a>
+                <a href="{% url 'complete' t.id %} "><li class="list-group-item t10">{{ t.todotext }}</li></a>
               {% endif %}
             {% endfor %}
           </ul>
